@@ -14,7 +14,7 @@ read subaccount_name
 sudo apt-get update
 sudo apt install pip -y
 sudo apt install jq -y
-pip install -r easy_live/requirements.txt
+pip install -r easy_try/requirements.txt
 
 secret_file=secret.json
 if test -f "$secret_file"; then
@@ -33,7 +33,7 @@ fi
 secret_content=`cat secret.json`
 $secret_content | jq '. + { "'"$strategy_name"'_'"$symbol1"'_'"$symbol2"'":{"public_key" : "'"$public_key"'","private_key" : "'"$private_key"'","subaccount_name" : "'"$subaccount_name"'","symbol1" : "'"$symbol1"'","symbol2" : "'"$symbol2"'"} }' secret.json > tmp.$$.json && mv tmp.$$.json secret.json
 
-croncmd="python3 easy_live/"$strategy_name".py "$symbol1" "$symbol2" > cronlog.log"
+croncmd="python3 easy_try/"$strategy_name".py "$symbol1" "$symbol2" > cronlog.log"
 cronjob="0 * * * * $croncmd"
 ( crontab -l | grep -v -F "$croncmd" ; echo "$cronjob" ) | crontab -
 
