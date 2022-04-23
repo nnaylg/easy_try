@@ -6,7 +6,7 @@ Pour faire nos échanges cryptos nous utiliserons FTX qui est une des plateforme
 
 Une fois connecté à votre serveur il suffit de faire 2 commandes:
 
-> git clone + lien
+> git clone https://github.com/nnaylg/easy_try.git
 
 > bash easy_try/install.sh
 
