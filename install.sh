@@ -39,6 +39,6 @@ cronjob="0 * * * * $croncmd"
 
 echo L erreur comand not found n est pas un probleme
 
-python3 easy_live/"$strategy_name".py "$symbol1" "$symbol2"
+python3 easy_try/"$strategy_name".py "$symbol1" "$symbol2"
 
 echo Si votre programme vous a afficher un message qui ne ressemble pas a une erreur c est que tout est bien installe vous pouvez maintenant quitter par exemple en faisant par exemple la comande close
